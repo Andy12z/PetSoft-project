@@ -6,7 +6,7 @@ import { authSchema } from "./validation";
 import { nextAuthConfig } from "./auth";
 
 const config = {
-  ...nextAuthConfig,
+  ...nextAuthConfig, 
   providers: [
     Credentials({
       async authorize(credentials) {
