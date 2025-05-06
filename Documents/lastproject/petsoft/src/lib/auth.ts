@@ -2,11 +2,11 @@ import NextAuth, { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { getUserByEmail } from "./server-utils";
-import { authSchema } from "./validation";
-import { nextAuthConfig } from "./auth";
+import { authSchema } from "@/lib/validation";
+import { nextAuthEdgeConfig } from "./auth-edge";
 
 const config = {
-  ...nextAuthConfig, 
+  ...nextAuthEdgeConfig,
   providers: [
     Credentials({
       async authorize(credentials) {

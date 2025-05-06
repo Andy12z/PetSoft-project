@@ -3,11 +3,13 @@ declare module "next-auth" {
     interface User {
         hasAccess:boolean;
         email:string;
+        id:string;
     }
     interface Session {
-        user:User & {
+        user:User &{
             id: string;
-        }
+            email?:string;
+        };
     }}
 
 
@@ -16,5 +18,6 @@ declare module "@auth/core/jwt"{
         userId:string;
         email:string;
         hasAccess:boolean;
+        id?:string;
     }
 }
